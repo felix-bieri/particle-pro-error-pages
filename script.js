@@ -1,3 +1,6 @@
+// © 2025 VIRATI AKIRANANDHAN REDDY
+// https://github.com/ViratiAkiraNandhanReddy/404-particle-pro
+
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 
