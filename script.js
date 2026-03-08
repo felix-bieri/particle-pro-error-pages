@@ -91,6 +91,7 @@ class Particle {
 
 // --- SCANNING TEXT TO CREATE PARTICLES ---
 function init() {
+  const errorCode = document.body.dataset.errorCode || 'Error';
   particleArray = [];
 
   // DPR aware setup: scale canvas internal pixels, but use CSS pixels for coordinates
@@ -109,14 +110,14 @@ function init() {
   ctx.textBaseline = 'middle';
 
   // measure text using CSS-space coordinates
-  const metrics = ctx.measureText('404');
+  const metrics = ctx.measureText(errorCode);
   const textWidth = metrics.width;
 
   adjustX = (window.innerWidth / 2) - (textWidth / 2);
   adjustY = (window.innerHeight / 2);
 
   // draw text (this will be rendered to device pixels by the transform)
-  ctx.fillText('404', adjustX, adjustY);
+  ctx.fillText(errorCode, adjustX, adjustY);
 
   // read pixel data from full canvas (device pixels) but step based on DPR
   const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
