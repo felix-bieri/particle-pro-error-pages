@@ -165,8 +165,7 @@ const reassembleBtn = document.getElementById('reassembleBtn');
 if (reassembleBtn) {
   reassembleBtn.addEventListener('click', () => {
     // navigate back if possible, otherwise home
-    if (window.history.length > 1) window.history.back();
-    else window.location.href = '/';
+    window.location.reload();
   });
   reassembleBtn.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') reassembleBtn.click();
